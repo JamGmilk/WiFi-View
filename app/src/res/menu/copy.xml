@@ -1,12 +1,12 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-	<item android:id="@+id/menu_ssid" android:title="复制SSID"/>
+    <item android:id="@+id/menu_ssid" android:title="复制SSID"/>
     <item android:id="@+id/menu_password" android:title="复制密码"/>
     <item android:id="@+id/menu_all" android:title="复制SSID和密码"/>    
-	<item android:id="@+id/menu_view" android:title="浏览源信息"/>     
-	<item android:title="删除">
-		<menu>
-			<item android:id="@+id/menu_delete" android:title="确认删除"/>
-			<item android:title="取消"/>
-		</menu>
-	</item>
+    <item android:id="@+id/menu_view" android:title="浏览源信息"/>     
+    <item android:title="删除">
+        <menu>
+            <item android:id="@+id/menu_delete" android:title="确认删除"/>
+            <item android:title="取消"/>
+        </menu>
+    </item>
 </menu>
