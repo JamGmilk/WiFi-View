@@ -11,17 +11,17 @@
         android:label="WiFi View"
         android:theme="@android:style/Theme.DeviceDefault.Light.DarkActionBar">
         <activity
-			android:name=".MainActivity"
-            android:label="WiFi View">
+		android:name=".MainActivity"
+		android:label="WiFi View">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-		<activity android:name=".ViewActivity" />
-		<activity
-			android:name=".FileActivity"
-			android:label="备份管理"
-			android:parentActivityName=".MainActivity"/>
+	<activity android:name=".ViewActivity" />
+	<activity
+		android:name=".FileActivity"
+		android:label="备份管理"
+		android:parentActivityName=".MainActivity"/>
     </application>
 </manifest>
