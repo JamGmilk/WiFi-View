@@ -59,9 +59,9 @@
 2. 部分系统可能会加密，导致软件不能正常工作；
 
 3. 软件需要读取 /data 下的系统文件，必须授予 ROOT 权限。
-  > Android 8.0 以下读取 /data/misc/wifi/wpa_supplicant.conf
-  > Android 8~11 读取 /data/misc/wifi/WifiConfigStore.xml
-  > Android 11 以上读取 /data/misc/apexdata/com.android.wifi/WifiConfigStore.xml
+ > Android 8.0 以下读取 /data/misc/wifi/wpa_supplicant.conf<br>
+ > Android 8~11 读取 /data/misc/wifi/WifiConfigStore.xml<br>
+ > Android 11 以上读取 /data/misc/apexdata/com.android.wifi/WifiConfigStore.xml
 
 ## License
 ```
