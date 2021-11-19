@@ -1,7 +1,8 @@
 # WiFi View
  
 快速查看与管理在 Android 设备上连过的 WiFi 的密码
- 
+
+
 ### 应用特性
 - 支持 Android 4.0 +
 - 支持显示中文名称的 WiFi
@@ -12,17 +13,20 @@
 
 ## 应用截图
 <figure class="pic">
-    <a href="https://github.com/PCGJG/WiFi-View/blob/master/Screenshots/1.jpg"><img src="https://github.com/PCGJG/WiFi-View/blob/master/Screenshots/1.jpg" height="25%" width="25%" /></a>
-    <a href="https://github.com/PCGJG/WiFi-View/blob/master/Screenshots/2.jpg"><img src="https://github.com/PCGJG/WiFi-View/blob/master/Screenshots/2.jpg" height="25%" width="25%" /></a>
-    <a href="https://github.com/PCGJG/WiFi-View/blob/master/Screenshots/3.jpg"><img src="https://github.com/PCGJG/WiFi-View/blob/master/Screenshots/3.jpg" height="25%" width="25%" /></a>
-    <a href="https://github.com/PCGJG/WiFi-View/blob/master/Screenshots/4.jpg"><img src="https://github.com/PCGJG/WiFi-View/blob/master/Screenshots/4.jpg" height="25%" width="25%" /></a>
-    <a href="https://github.com/PCGJG/WiFi-View/blob/master/Screenshots/5.jpg"><img src="https://github.com/PCGJG/WiFi-View/blob/master/Screenshots/5.jpg" height="25%" width="25%" /></a>
-    <a href="https://github.com/PCGJG/WiFi-View/blob/master/Screenshots/6.jpg"><img src="https://github.com/PCGJG/WiFi-View/blob/master/Screenshots/6.jpg" height="25%" width="25%" /></a>
-    <a href="https://github.com/PCGJG/WiFi-View/blob/master/Screenshots/7.jpg"><img src="https://github.com/PCGJG/WiFi-View/blob/master/Screenshots/7.jpg" height="25%" width="25%" /></a>
-    <a href="https://github.com/PCGJG/WiFi-View/blob/master/Screenshots/8.jpg"><img src="https://github.com/PCGJG/WiFi-View/blob/master/Screenshots/8.jpg" height="25%" width="25%" /></a>
-    <a href="https://github.com/PCGJG/WiFi-View/blob/master/Screenshots/9.jpg"><img src="https://github.com/PCGJG/WiFi-View/blob/master/Screenshots/9.jpg" height="25%" width="25%" /></a>
-    <a href="https://github.com/PCGJG/WiFi-View/blob/master/Screenshots/10.jpg"><img src="https://github.com/PCGJG/WiFi-View/blob/master/Screenshots/10.jpg" height="25%" width="25%" /></a>
-</figure>
+    <a href="/Screenshots/1.jpg"><img src="/Screenshots/1.jpg" height="25%" width="25%" /></a>
+    <a href="/Screenshots/2.jpg"><img src="/Screenshots/2.jpg" height="25%" width="25%" /></a>
+    <a href="/Screenshots/3.jpg"><img src="/Screenshots/3.jpg" height="25%" width="25%" /></a>
+    <a href="/Screenshots/4.jpg"><img src="/Screenshots/4.jpg" height="25%" width="25%" /></a>
+    <a href="/Screenshots/5.jpg"><img src="/Screenshots/5.jpg" height="25%" width="25%" /></a>
+    <a href="/Screenshots/6.jpg"><img src="/Screenshots/6.jpg" height="25%" width="25%" /></a>
+    <a href="/Screenshots/7.jpg"><img src="/Screenshots/7.jpg" height="25%" width="25%" /></a>
+    <a href="/Screenshots/8.jpg"><img src="/Screenshots/8.jpg" height="25%" width="25%" /></a>
+    <a href="/Screenshots/9.jpg"><img src="/Screenshots/9.jpg" height="25%" width="25%" /></a>
+    <a href="/Screenshots/10.jpg"><img src="/Screenshots/10.jpg" height="25%" width="25%" /></a>
+
+## 历代更新日志
+[CHANGELOG.md](CHANGELOG.md)
+
 
 ## 下载
 - [GitHub](https://github.com/JamGmilk/WiFi-View/releases)
@@ -46,8 +50,8 @@
 [[1]] https://developer.android.google.cn/guide/topics/connectivity/wifi-scan#wifi-scan-restrictions
 
 [1]: <https://developer.android.google.cn/guide/topics/connectivity/wifi-scan#wifi-scan-restrictions>
- 
- 
+
+
 ## 注意
 
 1. 手动删除的 WiFi 无法获取；
