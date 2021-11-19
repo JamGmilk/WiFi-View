@@ -19,7 +19,7 @@ public class MainActivity extends Activity {
         // 检测是否获取root，有则启动ViewActivity
         if (isRoot()) {
             startActivity(new Intent().setClassName("com.zzz.wifiview","com.zzz.wifiview.ViewActivity"));
-			finish();
+            finish();
         } else {
             showNoROOTDialog();
         }
