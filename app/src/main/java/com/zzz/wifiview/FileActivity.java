@@ -49,7 +49,15 @@ public class FileActivity extends Activity {
         backupParentPath = context.getExternalFilesDir("Backup").getPath();
         
         /** 设置 WiFi 密码文件路径 */
-        if (android.os.Build.VERSION.SDK_INT >= 26) wifiPath = "/data/misc/wifi/WifiConfigStore.xml"; else wifiPath = "/data/misc/wifi/wpa_supplicant.conf";
+        if (android.os.Build.VERSION.SDK_INT >= 26) {
+			if (android.os.Build.VERSION.SDK_INT >= 30) {
+				wifiPath = "/data/misc/apexdata/com.android.wifi/WifiConfigStore.xml";
+			} else {
+				wifiPath = "/data/misc/wifi/WifiConfigStore.xml";
+			}
+		} else {
+			wifiPath = "/data/misc/wifi/wpa_supplicant.conf";
+		}
         
         /** 获取备份文件列表 */
         fileList = new ArrayList<File>();
