@@ -25,7 +25,7 @@
 </figure>
 
 ## 下载
-- [GitHub](https://github.com/PCGJG/WiFi-View/blob/master/WiFi%20View.apk?raw=true)
+- [GitHub](https://github.com/JamGmilk/WiFi-View/releases)
 - [酷安](https://www.coolapk.com/apk/com.zzz.wifiview)
 
 
@@ -55,12 +55,13 @@
 2. 部分系统可能会加密，导致软件不能正常工作；
 
 3. 软件需要读取 /data 下的系统文件，必须授予 ROOT 权限。
-  > Android 8.0 以下读取 /data/misc/wifi/wpa_supplicant.conf  
-  > Android 8.0 及其以上读取 /data/misc/wifi/WifiConfigStore.xml
+  > Android 8.0 以下读取 /data/misc/wifi/wpa_supplicant.conf
+  > Android 8~11 读取 /data/misc/wifi/WifiConfigStore.xml
+  > Android 11 以上读取 /data/misc/apexdata/com.android.wifi/WifiConfigStore.xml
 
 ## License
 ```
-Copyright (c) 2020 果酱稽
+Copyright (c) 2021 JamGmilk
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -81,4 +82,4 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
 
-*Copyright &#169; 2016-2020 果酱稽. All rights reserved.*
+*Copyright &#169; 2016-2021 JamGmilk. All rights reserved.*
