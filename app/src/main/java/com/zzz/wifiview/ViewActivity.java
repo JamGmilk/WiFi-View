@@ -76,13 +76,15 @@ public class ViewActivity extends Activity {
             mainList = get(sPath, 2);
         } else { // 读取系统文件
             if (android.os.Build.VERSION.SDK_INT >= 26) {
-                sPath = "/data/misc/wifi/WifiConfigStore.xml";
-                mainList = get(sPath, 1);
+                if (android.os.Build.VERSION.SDK_INT >= 30) {
+                sPath = "/data/misc/apexdata/com.android.wifi/WifiConfigStore.xml";
+                } else {
+                    sPath = "/data/misc/wifi/WifiConfigStore.xml";
+                }
             } else {
                 sPath = "/data/misc/wifi/wpa_supplicant.conf";
-                mainList = get(sPath, 1);
             }
-            
+            mainList = get(sPath, 1);
         }
         
         
@@ -291,7 +293,7 @@ public class ViewActivity extends Activity {
     
     
     private void showAboutDialog() {
-        final String[] items = {"版本: 11", "开发者: 果酱稽", "应用信息", "在应用市场中查看", "开放源代码", "Copyright © 2016 - 2020 JamG.\nAll rights reserved."};
+        final String[] items = {"版本: 12", "应用信息", "置顶当前连接的WiFi", "开放源代码", "Copyright © 2016 - 2021 JamGmilk.\nAll rights reserved."};
         AlertDialog.Builder AboutDialog = new AlertDialog.Builder(this)
             .setTitle("WiFi View")
             .setIcon(com.zzz.wifiview.R.drawable.ic)
@@ -300,23 +302,18 @@ public class ViewActivity extends Activity {
                 public void onClick(DialogInterface dialog, int which) {
                     switch (which) {
                         case 0:
-                            Toast.makeText(ViewActivity.this, "版本代号: 39", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(ViewActivity.this, "版本代号: 40", Toast.LENGTH_SHORT).show();
                             break;
                         case 1:
-                            Toast.makeText(ViewActivity.this, "pcgjg1001@gmail.com", Toast.LENGTH_LONG).show();
-                            break;
-                        case 2:
                             Intent intent = new Intent();
                             intent.setAction(android.provider.Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
                             intent.setData(Uri.parse("package:com.zzz.wifiview"));
                             startActivity(intent);
                             break;
-                        case 3:
-                            Uri uri1 = Uri.parse("https://www.coolapk.com/apk/com.zzz.wifiview");
-                            Intent intent1 = new Intent(Intent.ACTION_VIEW, uri1);
-                            startActivity(intent1);
+                        case 2:
+                            showPermissionsDialog();
                             break;
-                        case 4:
+                        case 3:
                             Uri uri2 = Uri.parse("https://github.com/PCGJG/WiFi-View");
                             Intent intent2 = new Intent(Intent.ACTION_VIEW, uri2);
                             startActivity(intent2);
@@ -326,7 +323,26 @@ public class ViewActivity extends Activity {
             });
         AboutDialog.create().show();
     }
+
     
+    private void showPermissionsDialog() {
+        AlertDialog.Builder permissionsDialog = new AlertDialog.Builder(this);
+        permissionsDialog.setTitle("置顶当前连接WiFi");
+        permissionsDialog.setMessage("在 Android 8.0 以后，软件扫描 WLAN 需要满足以下所有条件：\n① 授予软件精确位置权限；\n② 设备已启用位置服务。\n\n仅用于置顶当前连接的WiFi。");
+        permissionsDialog.setPositiveButton("前往授权",new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog,int which) {
+                Intent intent = new Intent();
+                intent.setAction(android.provider.Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
+                intent.setData(Uri.parse("package:com.zzz.wifiview"));
+                startActivity(new Intent().setClassName("com.zzz.wifiview","com.zzz.wifiview.ViewActivity"));
+                startActivity(intent);
+                finish();
+            }
+        });
+        permissionsDialog.setNegativeButton("关闭", null);
+        permissionsDialog.show();
+    }
     
     public void cmd(String command) {
         Process process = null;
