@@ -1,4 +1,3 @@
-/** 佛祖保佑，永无bug🙏🙏🙏 */
 package com.zzz.wifiview;
 
 import android.app.Activity;
@@ -18,7 +17,7 @@ public class MainActivity extends Activity {
         
         // 检测是否获取root，有则启动ViewActivity
         if (isRoot()) {
-            startActivity(new Intent().setClassName("com.zzz.wifiview","com.zzz.wifiview.ViewActivity"));
+            startActivity(new Intent().setClassName("com.zzz.wifiview", "com.zzz.wifiview.ViewActivity"));
             finish();
         } else {
             showNoROOTDialog();
@@ -31,16 +30,15 @@ public class MainActivity extends Activity {
         noROOTDialog.setTitle("无法获取 ROOT 权限");
         noROOTDialog.setCancelable(false);
         noROOTDialog.setMessage("需要 ROOT 权限以访问 WiFi 密码数据。");
-        noROOTDialog.setPositiveButton("关闭",new DialogInterface.OnClickListener() {
+        noROOTDialog.setPositiveButton("关闭", new DialogInterface.OnClickListener() {
             @Override
-            public void onClick(DialogInterface dialog,int which) {
+            public void onClick(DialogInterface dialog, int which) {
                 finish();
             }
         });
-        //noROOTDialog.setNegativeButton("退出", null);
-        noROOTDialog.setNeutralButton("卸载",new DialogInterface.OnClickListener() {
+        noROOTDialog.setNeutralButton("卸载", new DialogInterface.OnClickListener() {
             @Override
-            public void onClick(DialogInterface dialog,int which) {
+            public void onClick(DialogInterface dialog, int which) {
                 Uri uri = Uri.parse("package:com.zzz.wifiview");
                 Intent intent = new Intent(Intent.ACTION_DELETE, uri);
                 startActivity(intent);
