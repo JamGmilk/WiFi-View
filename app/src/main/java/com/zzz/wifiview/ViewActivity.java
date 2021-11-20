@@ -159,7 +159,7 @@ public class ViewActivity extends Activity {
     
     public ArrayList<Map<String, String>> get(String path, int i) {
         try {
-            ReadFile file = new ReadFile(path, i);
+            ReadFile file = new ReadFile(path, i); // i为读取模式。1-常规模式，2-更多WiFi模式。
             return file.getList(this.context);
         } catch (Exception e) {
             Toast.makeText(this, "VAget: " + e.getMessage(), Toast.LENGTH_LONG).show();
