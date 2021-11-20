@@ -1,4 +1,3 @@
-/** 佛祖保佑，永无bug🙏🙏🙏 */
 package com.zzz.wifiview;
 
 import android.content.Context;
@@ -32,7 +31,7 @@ public class WiFiAdapter extends BaseAdapter {
     @Override
     public long getItemId(int position) {
         return position;
-		}
+    }
     
     @Override
     public View getView(int position, View view, ViewGroup parent) {
