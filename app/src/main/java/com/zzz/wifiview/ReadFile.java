@@ -1,4 +1,3 @@
-/** 佛祖保佑，永无bug🙏🙏🙏 */
 package com.zzz.wifiview;
 
 import android.content.Context;
@@ -64,9 +63,8 @@ public class ReadFile {
         scan(s);
     }
     
-    
+    /* 一个简陋的日志记录方法：exceptionCatch(formatter.format(utilDate) + " : " + "58"); */
     public void exceptionCatch(String strcontent) {
-        // writeTxtToFile(formatter.format(utilDate) + " : " + "58");
         String path = "/storage/emulated/0/Android/data/com.zzz.wifiview/debug/debug.txt";
         // System.currentTimeMillis();
         String strContent = strcontent + "\r\n";
@@ -87,6 +85,7 @@ public class ReadFile {
     }
     
     
+    /* 分隔每个 WiFi 条目 */
     private void scan(String s) {
         if (android.os.Build.VERSION.SDK_INT >= 26) {
             Pattern pattern = Pattern.compile("<Network>\\n([\\s\\S]+?)\\n\\</Network>");
@@ -104,6 +103,7 @@ public class ReadFile {
     }
     
     
+    /* Android 8.0 之前的解析 WiFi 方法*/
     private void add(String s) {
         exceptionCatch(s);
         HashMap<String, String> map = new HashMap<String, String>();
@@ -162,6 +162,7 @@ public class ReadFile {
     }
     
     
+    /* Android 8.0 之后的解析 WiFi 方法 */
     private void addOreo(String s) {
         HashMap<String, String> map = new HashMap<String, String>();
         map.put("view", s);
