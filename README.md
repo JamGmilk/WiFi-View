@@ -86,4 +86,4 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
 
-*Copyright &#169; 2016-2021 JamGmilk. All rights reserved.*
+*Copyright &#169; 2016-2021 JamGmilk.*
