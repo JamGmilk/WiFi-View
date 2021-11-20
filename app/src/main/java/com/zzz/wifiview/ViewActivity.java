@@ -44,9 +44,10 @@ public class ViewActivity extends Activity {
         // 缓存目录(/AppData/cache/bk)
         //bkPath = this.getExternalCacheDir().getPath() + "/bk";
         
-        // 备份目录 (/AppData/files/Backup/LastBackup)
+        // 备份目录 (/AppData/files/Backup/AutoBackup)
         backupPath = this.getExternalFilesDir("Backup").getPath() + "/AutoBackup";
         
+        /* 获取启动来源 */
         try {
             Intent intent = getIntent();
             Bundle bundle = intent.getExtras();
@@ -102,9 +103,9 @@ public class ViewActivity extends Activity {
                         popup = new PopupMenu(ViewActivity.this, view);
                         
                         if (isMore) {
-                            getMenuInflater().inflate(R.menu.more,popup.getMenu());
+                            getMenuInflater().inflate(R.menu.more, popup.getMenu());
                         } else {
-                            getMenuInflater().inflate(R.menu.copy,popup.getMenu());
+                            getMenuInflater().inflate(R.menu.copy, popup.getMenu());
                         }
                         
                         popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
@@ -132,7 +133,6 @@ public class ViewActivity extends Activity {
                                             }}).show();
                                         break;
                                     case R.id.menu_delete:
-                                        //run("cp -f " + wifiPath + " " + backupPath);
                                         delete(mainList.get(position).get("view"));
                                         cmd("cp -f " + backupPath + " " + sPath);
                                         if (!isRead) cmd("chmod 660 " + sPath);
@@ -159,7 +159,7 @@ public class ViewActivity extends Activity {
     
     public ArrayList<Map<String, String>> get(String path, int i) {
         try {
-            ReadFile file = new ReadFile(path,i);
+            ReadFile file = new ReadFile(path, i);
             return file.getList(this.context);
         } catch (Exception e) {
             Toast.makeText(this, "VAget: " + e.getMessage(), Toast.LENGTH_LONG).show();
@@ -231,7 +231,7 @@ public class ViewActivity extends Activity {
                 startActivity(new Intent(Settings.ACTION_WIFI_SETTINGS));
                 return true;
             case 3: // 备份与恢复
-                startActivity(new Intent().setClassName("com.zzz.wifiview","com.zzz.wifiview.FileActivity"));
+                startActivity(new Intent().setClassName("com.zzz.wifiview", "com.zzz.wifiview.FileActivity"));
                 return true;
             case 4: // 关于
                 showAboutDialog();
@@ -266,7 +266,7 @@ public class ViewActivity extends Activity {
             while ((line = br.readLine()) != null) {
                 s += line.trim() + "\n";
             }
-            pw = new OutputStreamWriter(new FileOutputStream(backupPath),"UTF-8");
+            pw = new OutputStreamWriter(new FileOutputStream(backupPath), "UTF-8");
             s = s.replace(ss,"");
             pw.write(s);
         } catch (IOException e) {
@@ -293,7 +293,7 @@ public class ViewActivity extends Activity {
     
     
     private void showAboutDialog() {
-        final String[] items = {"版本: 12", "应用信息", "置顶当前连接的WiFi", "开放源代码", "Copyright © 2016 - 2021 JamGmilk.\nAll rights reserved."};
+        final String[] items = {"版本: 12", "应用信息", "置顶当前连接的WiFi", "开放源代码", "Copyright © 2016 - 2021 JamGmilk."};
         AlertDialog.Builder AboutDialog = new AlertDialog.Builder(this)
             .setTitle("WiFi View")
             .setIcon(com.zzz.wifiview.R.drawable.ic)
@@ -314,7 +314,7 @@ public class ViewActivity extends Activity {
                             showPermissionsDialog();
                             break;
                         case 3:
-                            Uri uri2 = Uri.parse("https://github.com/PCGJG/WiFi-View");
+                            Uri uri2 = Uri.parse("https://github.com/JamGmilk/WiFi-View");
                             Intent intent2 = new Intent(Intent.ACTION_VIEW, uri2);
                             startActivity(intent2);
                             break;
@@ -335,7 +335,7 @@ public class ViewActivity extends Activity {
                 Intent intent = new Intent();
                 intent.setAction(android.provider.Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
                 intent.setData(Uri.parse("package:com.zzz.wifiview"));
-                startActivity(new Intent().setClassName("com.zzz.wifiview","com.zzz.wifiview.ViewActivity"));
+                startActivity(new Intent().setClassName("com.zzz.wifiview", "com.zzz.wifiview.ViewActivity"));
                 startActivity(intent);
                 finish();
             }
