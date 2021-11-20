@@ -35,7 +35,7 @@ public class FileActivity extends Activity {
     
     int num; // 计数菌
     
-    /** 设定时间格式 */
+    /* 设定时间格式 */
     java.util.Date utilDate = new java.util.Date();
     SimpleDateFormat formatter = new SimpleDateFormat("yyyyMMddHHmm");
     
@@ -45,10 +45,10 @@ public class FileActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.list);
         
-        /** 设置备份目录 */
+        /* 设置备份目录 */
         backupParentPath = context.getExternalFilesDir("Backup").getPath();
         
-        /** 设置 WiFi 密码文件路径 */
+        /* 设置 WiFi 密码文件路径 */
         if (android.os.Build.VERSION.SDK_INT >= 26) {
             if (android.os.Build.VERSION.SDK_INT >= 30) {
                 wifiPath = "/data/misc/apexdata/com.android.wifi/WifiConfigStore.xml";
@@ -59,7 +59,7 @@ public class FileActivity extends Activity {
             wifiPath = "/data/misc/wifi/wpa_supplicant.conf";
         }
         
-        /** 获取备份文件列表 */
+        /* 获取备份文件列表 */
         fileList = new ArrayList<File>();
         getAllFiles(new File(backupParentPath));
         List<String> data = new ArrayList<String>();
@@ -150,7 +150,7 @@ public class FileActivity extends Activity {
         et.setInputType(InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD);
         
         BackupDialog
-            .setPositiveButton("开始",new DialogInterface.OnClickListener() {
+            .setPositiveButton("开始备份",new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog,int which) {
                     backupPath = backupParentPath + "/" + et.getText().toString();
@@ -163,7 +163,7 @@ public class FileActivity extends Activity {
                 }
             })
             .setNegativeButton("取消", null)
-            /*.setNeutralButton("发送",new DialogInterface.OnClickListener() {
+            /*.setNeutralButton("发送备份",new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog,int which) {
                     backupPath = backupParentPath + "/" + et.getText().toString();
@@ -185,7 +185,7 @@ public class FileActivity extends Activity {
         AlertDialog.Builder RestoreDialog = new AlertDialog.Builder(this);
         RestoreDialog
             .setTitle("警告")
-            .setMessage("此操作将会替换设备的WiFi密码文件。是否继续？\n\n" + "当前文件：\n" + path)
+            .setMessage("此操作将会替换设备的 WiFi 密码文件。是否继续？\n\n" + "当前文件：\n" + path)
             .setPositiveButton("继续",new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog,int which) {
@@ -200,7 +200,7 @@ public class FileActivity extends Activity {
     }
     
     
-    /** 获取文件列表 */
+    /* 获取备份文件列表 */
     private void getAllFiles(File root) {
         File files[] = root.listFiles();
         if(files != null)
@@ -214,7 +214,7 @@ public class FileActivity extends Activity {
     }
     
     
-    /** 执行命令 */
+    /* 执行命令 */
     public void cmd(String command) {
         Process process = null;
         DataOutputStream os = null;
